@@ -1,0 +1,132 @@
+.navbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: rgba(10, 14, 26, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.navbar__inner {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.navbar__logo {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(107, 140, 255, 0.3);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.navbar__name {
+  font-size: 1.02rem;
+}
+
+.navbar__links ul {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.navbar__links a {
+  display: inline-block;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color var(--fast) var(--ease), background var(--fast) var(--ease);
+}
+
+.navbar__links a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.navbar__links a.is-active {
+  color: var(--accent);
+}
+
+.navbar__toggle {
+  display: none;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  color: var(--text);
+}
+
+.navbar__mobile {
+  position: fixed;
+  top: var(--nav-height);
+  inset: var(--nav-height) 0 0 0;
+  background: rgba(10, 14, 26, 0.98);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 1rem 1.5rem 2rem;
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--med) var(--ease), transform var(--med) var(--ease);
+}
+
+.navbar__mobile ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.navbar__mobile a {
+  display: block;
+  padding: 0.9rem 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* Only reachable states via .is-open are used for both desktop-expanded
+   overlay and toggled menu, so guard with media query. */
+
+@media (max-width: 900px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: grid;
+  }
+}
+
+.navbar__mobile.is-open {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+@media (min-width: 901px) {
+  .navbar__mobile {
+    display: none;
+  }
+}

@@ -1,0 +1,119 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.about__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  height: 100%;
+  transition: border-color var(--med) var(--ease),
+    transform var(--med) var(--ease);
+}
+
+.about__card:hover {
+  border-color: var(--border);
+  transform: translateY(-4px);
+}
+
+.about__card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.about__card p {
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.about__card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Education ---- */
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.education {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+
+.education + .education {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.education__mark {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 74px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(107, 140, 255, 0.3);
+  background: var(--accent-soft);
+  text-align: center;
+}
+
+.education__grade {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.education__stream {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.education__name {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.education__school {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+}
+
+.education__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+  margin-top: 0.6rem;
+}
+
+.education__meta li {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.education__meta-label {
+  color: var(--text-faint);
+  margin-right: 0.4rem;
+}
+
+@media (max-width: 860px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+}

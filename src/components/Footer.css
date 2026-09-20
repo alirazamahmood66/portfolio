@@ -1,0 +1,35 @@
+.footer {
+  border-top: 1px solid var(--border-soft);
+  padding: 1.8rem 0;
+  background: var(--bg-soft);
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.footer__role {
+  font-family: var(--font-mono);
+  font-size: 0.82rem !important;
+  color: var(--text-faint) !important;
+}
+
+.footer__top {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 500;
+  transition: color var(--fast) var(--ease);
+}
+
+.footer__top:hover {
+  color: var(--text);
+}

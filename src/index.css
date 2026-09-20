@@ -1,0 +1,301 @@
+/* ============================================================
+   Global styles — design tokens, reset, base, shared utilities
+   ============================================================ */
+
+:root {
+  /* Palette */
+  --bg: #0a0e1a;
+  --bg-soft: #0f1524;
+  --bg-card: #141b2e;
+  --bg-input: #0d1322;
+  --border: #26304d;
+  --border-soft: #1d2540;
+
+  --text: #e9edf7;
+  --text-muted: #9aa6c2;
+  --text-faint: #6b768f;
+
+  --accent: #6b8cff;
+  --accent-strong: #5272f5;
+  --accent-ink: #0a0e1a;
+  --accent-soft: rgba(107, 140, 255, 0.12);
+
+  --success: #43d9a3;
+
+  /* Typography */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'SFMono-Regular', Consolas,
+    'Liberation Mono', monospace;
+
+  /* Layout */
+  --container-width: 1120px;
+  --nav-height: 68px;
+  --radius: 14px;
+  --radius-sm: 9px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --fast: 160ms;
+  --med: 300ms;
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 16px);
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Utility / shared ---------- */
+
+.container {
+  width: min(var(--container-width), calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 5.5rem;
+}
+
+.section--band {
+  background: var(--bg-soft);
+  border-block: 1px solid var(--border-soft);
+}
+
+.section-heading {
+  max-width: 660px;
+  margin-bottom: 3rem;
+}
+
+.section-heading--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.85rem, 3.6vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+
+.section-heading p {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.35rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  border: 1px solid transparent;
+  transition: transform var(--fast) var(--ease),
+    background var(--fast) var(--ease), border-color var(--fast) var(--ease),
+    color var(--fast) var(--ease), box-shadow var(--fast) var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn svg {
+  flex: none;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn--primary:hover {
+  background: var(--accent-strong);
+  box-shadow: 0 10px 28px -10px rgba(107, 140, 255, 0.55);
+}
+
+.btn--ghost {
+  color: var(--text);
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent-strong);
+  color: var(--accent);
+}
+
+.btn--subtle {
+  padding: 0.5rem 0.95rem;
+  font-size: 0.88rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+.btn--subtle:hover {
+  color: var(--accent);
+  border-color: var(--accent-strong);
+}
+
+.btn--disabled,
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- Chips / tags ---------- */
+
+.chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(107, 140, 255, 0.22);
+  padding: 0.28rem 0.62rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ---------- Scroll reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Accessibility helpers ---------- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Responsive adjustments ---------- */
+
+@media (max-width: 640px) {
+  .section {
+    padding-block: 4rem;
+  }
+
+  .container {
+    width: min(var(--container-width), calc(100% - 2rem));
+  }
+}

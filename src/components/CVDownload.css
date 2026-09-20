@@ -1,0 +1,54 @@
+.cv-card {
+  max-width: 520px;
+  margin-inline: auto;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 2.6rem 2rem;
+}
+
+.cv-card__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-inline: auto;
+  margin-bottom: 1.2rem;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(107, 140, 255, 0.3);
+  color: var(--accent);
+}
+
+.cv-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.cv-card__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.cv-card__text {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  margin-bottom: 1.6rem;
+}
+
+.cv-card__hint {
+  margin-top: 1.3rem;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+}
+
+.cv-card__hint code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-soft);
+  border-radius: 5px;
+  padding: 0.1rem 0.35rem;
+}
