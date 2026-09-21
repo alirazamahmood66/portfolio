@@ -4,11 +4,21 @@
   gap: 1.2rem;
 }
 
+.services__grid > li {
+  display: flex;
+}
+
+.services__grid > li > .reveal {
+  display: flex;
+  flex-grow: 1;
+}
+
 .service-card {
   background: var(--bg-card);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius);
   padding: 1.8rem 1.6rem;
+  width: 100%;
   height: 100%;
   transition: border-color var(--med) var(--ease),
     transform var(--med) var(--ease), box-shadow var(--med) var(--ease);

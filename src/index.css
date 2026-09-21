@@ -160,6 +160,20 @@ ol {
   font-size: 1.02rem;
 }
 
+/* ---------- Overflow guard for grid layouts ----------
+   Grid items default to min-width: auto, so a track can grow to
+   its content's min-content width and push the page wider than the
+   viewport. Letting items shrink keeps every grid inside its container. */
+
+.hero__grid > *,
+.about__grid > *,
+.skills__grid > *,
+.projects__grid > *,
+.services__grid > *,
+.contact__grid > * {
+  min-width: 0;
+}
+
 /* ---------- Buttons ---------- */
 
 .btn {

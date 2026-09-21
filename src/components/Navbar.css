@@ -81,10 +81,14 @@
 .navbar__mobile {
   position: fixed;
   top: var(--nav-height);
-  inset: var(--nav-height) 0 0 0;
+  left: 0;
+  right: 0;
+  height: calc(100svh - var(--nav-height));
   background: rgba(10, 14, 26, 0.98);
   border-bottom: 1px solid var(--border-soft);
   padding: 1rem 1.5rem 2rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transform: translateY(-8px);
   opacity: 0;
   pointer-events: none;

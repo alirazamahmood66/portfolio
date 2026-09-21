@@ -6,8 +6,7 @@ const EDUCATION = [
   {
     id: 'intermediate',
     markTop: 'Inter',
-    markSub: 'Pre-Engineering',
-    program: 'Intermediate Pre-Engineering',
+    program: 'Intermediate (Pre-Engineering)',
     school: 'Govt Boys Higher Secondary School Gharo, Thatta',
     marks: '784/ 1100',
     grade: 'A',
@@ -16,8 +15,7 @@ const EDUCATION = [
   {
     id: 'matric',
     markTop: 'Matric',
-    markSub: 'Computer Science',
-    program: 'Matric',
+    program: 'Matric (Computer Science)',
     school: 'Roshan Tara School Bachal Goth',
     marks: '821 / 1100',
     grade: 'A',

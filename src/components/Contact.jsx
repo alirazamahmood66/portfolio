@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { LinkedInIcon, MailIcon } from './Icons'
+import { LinkedInIcon, InstagramIcon, FacebookIcon, WhatsAppIcon, MailIcon } from './Icons'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import './Contact.css'
@@ -10,6 +10,24 @@ const CONTACTS = [
     value: 'linkedin.com/in/ali-raza-mahmood-640993421',
     href: 'https://linkedin.com/in/ali-raza-mahmood-640993421',
     Icon: LinkedInIcon,
+  },
+  {
+    label: 'Instagram',
+    value: '@alirazamahmood3',
+    href: 'https://www.instagram.com/alirazamahmood3/',
+    Icon: InstagramIcon,
+  },
+  {
+    label: 'Facebook',
+    value: 'Ali Raza Mahmood',
+    href: 'https://www.facebook.com/profile.php?id=61581798501217',
+    Icon: FacebookIcon,
+  },
+  {
+    label: 'WhatsApp',
+    value: '03253154878',
+    href: 'https://wa.me/923253154878',
+    Icon: WhatsAppIcon,
   },
 ]
 

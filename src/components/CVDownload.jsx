@@ -4,12 +4,10 @@ import SectionHeading from './SectionHeading'
 import './CVDownload.css'
 
 /**
- * To attach your CV file:
- *   1. Drop the file into  public/cv/  (e.g. public/cv/Ali-Raza-Mahmood-CV.pdf)
- *   2. Set CV_URL to its public path, e.g. '/cv/Ali-Raza-Mahmood-CV.pdf'
- * The button below becomes a real download link automatically.
+ * CV PDF lives at public/cv/Ali-Raza-Mahmood-CV.pdf and is served at
+ * /cv/Ali-Raza-Mahmood-CV.pdf. The button below is the download link.
  */
-const CV_URL = null
+const CV_URL = '/cv/Ali-Raza-Mahmood-CV.pdf'
 
 export default function CVDownload() {
   const ready = Boolean(CV_URL)
@@ -57,7 +55,8 @@ export default function CVDownload() {
 
             {!ready && (
               <p className="cv-card__hint">
-                Add your CV file to <code>public/cv/</code> and uncomment{' '}
+                Add your CV file as{' '}
+                <code>public/cv/Ali-Raza-Mahmood-CV.pdf</code> and set{' '}
                 <code>CV_URL</code> at the top of{' '}
                 <code>src/components/CVDownload.jsx</code>.
               </p>
